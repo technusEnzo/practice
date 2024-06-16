@@ -1,25 +1,36 @@
+import numpy as np
 class interestCalculator:
     # Define properties
     def __init__(self, Contribution, interestRate, Years):
         self.Contribution = Contribution;
         self.interestRate = interestRate;
         self.Years = Years;
-
+    
+    # Simple interest calculator
     def simpleInterestCalculator(self):
+        check_numeric_properties(self);
         Amount = self.Contribution * self.interestRate/100 * self.Years + self.Contribution;
         print("\nSimple Interest Calculator:")
-        print(round(Amount))
+        print(Amount)
 
+    # Compound interest calculator
     def compoundInterestCalculator(self):
+        check_numeric_properties(self);
         compoundInterestAmount = self.Contribution*( (1+(self.interestRate/100))** self.Years)
-        print("Compound Interest Calculator:")
-        print(round(compoundInterestAmount))
-
+        print("\nCompound Interest Calculator:")
+        print(compoundInterestAmount)
+     
+# Check numeric properties - ChatGPT code
+def check_numeric_properties(self):
+    numeric_types = (int, float, complex)
+    for attr, value in self.__dict__.items():
+        if isinstance(value, numeric_types):
+            print(f"Attribute '{attr}' with value '{value}' is numeric.")
+        else:
+            print(f"Attribute '{attr}' with value '{value}' is not numeric.")
 
 # Create an instance of the class
-myInterestCalcChoice = interestCalculator(20000, 10.5, 20);
+myInterestCalcChoice = interestCalculator(20000, 10.5, np.array([1,2,3,4,5]));
 
-# Call the function
 myInterestCalcChoice.compoundInterestCalculator()
-
-myInterestCalcChoice.simpleInterestCalculator()
+#myInterestCalcChoice.simpleInterestCalculator()
