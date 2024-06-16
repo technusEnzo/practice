@@ -29,17 +29,25 @@ def checkNumericProperties(self):
         if isinstance(value, numeric_types):
             print(f"Attribute '{attr}' with value '{value}' is numeric.")
         else:
-            print(f"Attribute '{attr}' with value '{value}' is not numeric. Please enter in a numeric value")
+            print(f"Attribute '{attr}' with value '{value}' is not numeric. Please enter in a numeric value.")
 
-# Create an instance of the class
+# Inputs for user - Contribution, Interest Rate, Years
 Contribution = input("Enter in a value for the contribution amount:")
 interestRate = input("Enter in a value for the interest rate:")
 Years = input("Enter in a value for the number of years:")
+
+# Create an instance of the class
 myInterestCalcChoice = interestCalculator(float(Contribution), float(interestRate), float(Years));
+
+# Input for user - a SI or CI calculation method?
 inputTypeofCalc = input("Would you like to perform a simple interest or a compound interest calculation?")
 
-if inputTypeofCalc == 'simple interest':
+# String input comparison
+if inputTypeofCalc == 'simple interest' or 'Simple Interest':
     myInterestCalcChoice.simpleInterestCalculator()
-    
-elif inputTypeofCalc == 'compound interest':
+
+elif inputTypeofCalc == 'compound interest' or 'Compound Interest':
         myInterestCalcChoice.compoundInterestCalculator()
+
+else: 
+    print("No valid option selected. Please try again.")
