@@ -21,3 +21,5 @@ myInterestCalcChoice = interestCalculator(20000, 10.5, 20);
 
 # Call the function
 myInterestCalcChoice.compoundInterestCalculator()
+
+myInterestCalcChoice.simpleInterestCalculator()
