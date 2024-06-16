@@ -10,20 +10,20 @@ class interestCalculator:
     
     # Simple interest calculator
     def simpleInterestCalculator(self):
-        check_numeric_properties(self);
+        checkNumericProperties(self);
         Amount = self.Contribution * self.interestRate/100 * self.Years + self.Contribution;
         print("\nSimple Interest Calculator:")
         print(Amount)
 
     # Compound interest calculator
     def compoundInterestCalculator(self):
-        check_numeric_properties(self);
+        checkNumericProperties(self);
         compoundInterestAmount = self.Contribution*( (1+(self.interestRate/100))** self.Years)
         print("\nCompound Interest Calculator:")
         print(compoundInterestAmount)
      
 # Check numeric properties - ChatGPT code
-def check_numeric_properties(self):
+def checkNumericProperties(self):
     numeric_types = (int, float, complex)
     for attr, value in self.__dict__.items():
         if isinstance(value, numeric_types):
