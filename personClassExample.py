@@ -3,8 +3,9 @@ class Person:
     self.name = name
     self.age = age
 
-  def myfunc(abc):
-    print("Hello my name is " + abc.name + " and my age is " + str(abc.age))
+  # Method function
+  def myfunc(self):
+    print("Hello my name is " + self.name + " and my age is " + str(self.age))
 
 p1 = Person("John", 36)
 p1.age = 40
