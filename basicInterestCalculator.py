@@ -1,6 +1,5 @@
 # Add libraries
 import numpy as np
-
 class interestCalculator:
     # Define properties
     def __init__(self, Contribution, interestRate, Years):
@@ -11,16 +10,16 @@ class interestCalculator:
     # Simple interest calculator
     def simpleInterestCalculator(self):
         checkNumericProperties(self);
-        Amount = self.Contribution * self.interestRate/100 * self.Years + self.Contribution;
+        totalAmount = self.Contribution * self.interestRate/100 * self.Years + self.Contribution;
         print("\nSimple Interest Calculator:")
-        print(Amount)
+        print(totalAmount)
 
     # Compound interest calculator
     def compoundInterestCalculator(self):
         checkNumericProperties(self);
-        compoundInterestAmount = self.Contribution*( (1+(self.interestRate/100))** self.Years)
+        totalCompoundInterestAmount = self.Contribution*( (1+(self.interestRate/100))** self.Years)
         print("\nCompound Interest Calculator:")
-        print(compoundInterestAmount)
+        print(totalCompoundInterestAmount)
      
 # Check numeric properties - ChatGPT code
 def checkNumericProperties(self):
